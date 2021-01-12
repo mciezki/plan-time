@@ -70,7 +70,7 @@ const Interface = () => {
 
     return (
         <div className="App">
-            <h1>To Do App</h1>
+            <h1>PlanTime App</h1>
             <button className="signout" onClick={logOut}>Log Out</button>
             <AddTask tasks={tasks} add={addTask} />
             <TaskList tasks={tasks} deleteTask={deleteTask} change={changeTaskStatus} />
