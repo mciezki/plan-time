@@ -3,23 +3,22 @@ import './css/App.css';
 
 import { UserContext } from '../store/UserProvider';
 
-import { auth, signInWithGoogle } from "../firebase";
+import { signInWithGoogle } from "../firebase";
 
 
 const Login = () => {
     const { user } = useContext(UserContext);
 
-    const logInOut = () => {
+    const logIn = () => {
         if (!user) {
             signInWithGoogle()
-        } else {
-            auth.signOut();
-            alert('You were signed out');
         }
     }
 
     return (
-        <button className="signout" onClick={logInOut}>{user ? 'Sign Out' : 'Log In'}</button>
+        <div className="App">
+            <button className="loginbutton" onClick={logIn}>Log In</button>
+        </div>
     )
 }
 
